@@ -21,5 +21,17 @@ class StartViewController: UIViewController {
         photoLibraryButton.setup(label: "Photo Library", image: UIImage(systemName: "folder")!)
     }
 
+    @IBAction func onPickButtonTap(_ sender: Any) {
+        print("onPickButtonTap")
+    }
+    
+    @IBAction func onCameraButtonTap(_ sender: Any) {
+        print("onCameraButtonTap")
+    }
+    
+    @IBAction func onPhotoLibraryButtonTap(_ sender: Any) {
+        print("onPhotoLibraryButtonTap")
+    }
+    
 }
 

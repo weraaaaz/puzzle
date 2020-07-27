@@ -10,7 +10,6 @@
         <!--Start View Controller-->
         <scene sceneID="GcY-om-oYW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B9b-uB-zkD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="StartViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KYP-Qs-siX" customClass="StartViewController" customModule="Puzzle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="afq-UU-87Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -41,6 +40,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onPickButtonTap:" destination="KYP-Qs-siX" eventType="touchUpInside" id="o0Z-bV-o97"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Or load your own-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Uu-tb-3zp">
                                 <rect key="frame" x="134.5" y="409" width="145.5" height="20.5"/>
@@ -57,6 +59,9 @@
                                             <constraint firstAttribute="height" constant="104" id="5i8-U8-gup"/>
                                             <constraint firstAttribute="width" constant="136" id="Br9-qr-JCv"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="onCameraButtonTap:" destination="KYP-Qs-siX" eventType="touchUpInside" id="TIY-cj-aHY"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8J-El-by1" customClass="StartViewButton" customModule="Puzzle" customModuleProvider="target">
                                         <rect key="frame" x="168" y="0.0" width="136" height="104"/>
@@ -64,6 +69,9 @@
                                             <constraint firstAttribute="height" constant="104" id="EPT-gu-4jq"/>
                                             <constraint firstAttribute="width" constant="136" id="omB-ki-UnC"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="onPhotoLibraryButtonTap:" destination="KYP-Qs-siX" eventType="touchUpInside" id="qH7-rX-eJg"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -89,6 +97,7 @@
                         <outlet property="pickButton" destination="5xd-dZ-lRN" id="C4A-ME-SWU"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B9b-uB-zkD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="115.94202898550725" y="115.84821428571428"/>
         </scene>
