@@ -8,17 +8,22 @@
 
 import UIKit
 
-class StartViewController: UIViewController {
+class StartViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var pickButton: StartViewButton!
     @IBOutlet weak var cameraButton: StartViewButton!
     @IBOutlet weak var photoLibraryButton: StartViewButton!
+    @IBOutlet weak var selectedImage: UIImageView!
 
+    var imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickButton.setup(label: "Pick",  image: UIImage(systemName: "photo")!)
         cameraButton.setup(label: "Camera", image: UIImage(systemName: "camera")!)
         photoLibraryButton.setup(label: "Photo Library", image: UIImage(systemName: "folder")!)
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false
     }
 
     @IBAction func onPickButtonTap(_ sender: Any) {
@@ -26,12 +31,19 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func onCameraButtonTap(_ sender: Any) {
-        print("onCameraButtonTap")
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func onPhotoLibraryButtonTap(_ sender: Any) {
-        print("onPhotoLibraryButtonTap")
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
     }
-    
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        selectedImage.image = (info[.originalImage] as? UIImage)!
+        dismiss(animated: true)
+    }
+
 }
 
