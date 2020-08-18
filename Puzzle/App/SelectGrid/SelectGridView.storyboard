@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Select Grid View Controller-->
+        <scene sceneID="jwg-Ca-PPF">
+            <objects>
+                <viewController storyboardIdentifier="SelectGridViewController" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Aqa-Zn-5CK" customClass="SelectGridViewController" customModule="Puzzle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UxV-7h-eCS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UWg-iC-yyp">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Grid Size = 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kza-ir-2bv">
+                                <rect key="frame" x="16" y="60" width="161.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gl6-Gc-L9p">
+                                <rect key="frame" x="16" y="96.5" width="100" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWU-Pi-k3H">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Kra-3S-jUI"/>
+                                            <constraint firstAttribute="height" constant="50" id="S0g-XA-0Ja"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="4"/>
+                                        <state key="normal" title="-">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onDecreaseButtonTap:" destination="Aqa-Zn-5CK" eventType="touchUpInside" id="ZMZ-jW-UKw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BR8-NX-Lmg">
+                                        <rect key="frame" x="50" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="50g-tA-nUC"/>
+                                            <constraint firstAttribute="height" constant="50" id="cUE-hp-evM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="4"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onIncreaseButtonTap:" destination="Aqa-Zn-5CK" eventType="touchUpInside" id="oj5-f1-qMq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="YOv-KB-mLo"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geZ-7A-h3r">
+                                <rect key="frame" x="67" y="101.5" width="2" height="40"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BcS-Q9-suO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kza-ir-2bv" firstAttribute="top" secondItem="865-bS-SH1" secondAttribute="top" constant="16" id="547-Po-u0P"/>
+                            <constraint firstAttribute="bottom" secondItem="UWg-iC-yyp" secondAttribute="bottom" id="KuQ-fN-ch8"/>
+                            <constraint firstItem="Gl6-Gc-L9p" firstAttribute="leading" secondItem="865-bS-SH1" secondAttribute="leading" constant="16" id="Rxn-jy-7Ru"/>
+                            <constraint firstItem="UWg-iC-yyp" firstAttribute="top" secondItem="UxV-7h-eCS" secondAttribute="top" id="TjP-x0-XNl"/>
+                            <constraint firstAttribute="trailing" secondItem="UWg-iC-yyp" secondAttribute="trailing" id="Usg-N6-Lbn"/>
+                            <constraint firstItem="UWg-iC-yyp" firstAttribute="centerY" secondItem="UxV-7h-eCS" secondAttribute="centerY" id="XRt-55-2ex"/>
+                            <constraint firstItem="UWg-iC-yyp" firstAttribute="leading" secondItem="UxV-7h-eCS" secondAttribute="leading" id="YBN-79-mvu"/>
+                            <constraint firstItem="geZ-7A-h3r" firstAttribute="centerY" secondItem="Gl6-Gc-L9p" secondAttribute="centerY" id="bhX-wg-AD3"/>
+                            <constraint firstItem="Kza-ir-2bv" firstAttribute="leading" secondItem="865-bS-SH1" secondAttribute="leading" constant="16" id="h3p-Tj-ezU"/>
+                            <constraint firstItem="geZ-7A-h3r" firstAttribute="top" secondItem="Gl6-Gc-L9p" secondAttribute="top" constant="5" id="j6f-At-Wf9"/>
+                            <constraint firstItem="geZ-7A-h3r" firstAttribute="leading" secondItem="IWU-Pi-k3H" secondAttribute="trailing" constant="1" id="jV2-vJ-BIA"/>
+                            <constraint firstItem="Gl6-Gc-L9p" firstAttribute="top" secondItem="Kza-ir-2bv" secondAttribute="bottom" constant="16" id="pSm-e1-uJA"/>
+                            <constraint firstItem="UWg-iC-yyp" firstAttribute="centerX" secondItem="UxV-7h-eCS" secondAttribute="centerX" id="rEZ-gu-FPc"/>
+                            <constraint firstItem="geZ-7A-h3r" firstAttribute="trailing" secondItem="BR8-NX-Lmg" secondAttribute="leading" constant="3" id="s0H-Dh-gLb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="865-bS-SH1"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="UxV-7h-eCS" id="1Dr-40-pMe"/>
+                        <outlet property="decreaseCountButton" destination="IWU-Pi-k3H" id="1P4-r9-vhA"/>
+                        <outlet property="imageView" destination="UWg-iC-yyp" id="nR2-6r-g0U"/>
+                        <outlet property="increaseCountButton" destination="BR8-NX-Lmg" id="Rre-Rv-x9o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oIP-aP-fmP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
+        </scene>
+    </scenes>
+</document>

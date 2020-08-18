@@ -75,13 +75,6 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jit-Io-z79">
-                                <rect key="frame" x="107" y="662" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="PrI-qG-Vyu"/>
-                                    <constraint firstAttribute="width" constant="200" id="gbJ-9F-Rml"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -92,10 +85,8 @@
                             <constraint firstItem="o6t-Gi-xDi" firstAttribute="centerX" secondItem="c5Q-oZ-DAS" secondAttribute="centerX" id="RX9-HR-cZX"/>
                             <constraint firstItem="5xd-dZ-lRN" firstAttribute="top" secondItem="o6t-Gi-xDi" secondAttribute="top" constant="128" id="Sqt-wv-6Rx"/>
                             <constraint firstItem="83p-F0-fLI" firstAttribute="top" secondItem="5xd-dZ-lRN" secondAttribute="bottom" constant="64" id="ayl-iE-Xg8"/>
-                            <constraint firstItem="Jit-Io-z79" firstAttribute="centerX" secondItem="c5Q-oZ-DAS" secondAttribute="centerX" id="elc-ll-Vwb"/>
                             <constraint firstItem="83p-F0-fLI" firstAttribute="centerX" secondItem="afq-UU-87Q" secondAttribute="centerX" id="hVz-as-Rcb"/>
                             <constraint firstItem="9Uu-tb-3zp" firstAttribute="top" secondItem="5xd-dZ-lRN" secondAttribute="bottom" constant="16" id="lRy-P6-aMp"/>
-                            <constraint firstItem="c5Q-oZ-DAS" firstAttribute="bottom" secondItem="Jit-Io-z79" secondAttribute="bottom" id="upf-Ey-TTp"/>
                             <constraint firstItem="9Uu-tb-3zp" firstAttribute="centerX" secondItem="afq-UU-87Q" secondAttribute="centerX" id="xwi-XB-SuC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c5Q-oZ-DAS"/>
@@ -104,7 +95,6 @@
                         <outlet property="cameraButton" destination="BV3-w3-dPo" id="Bbg-Za-TXF"/>
                         <outlet property="photoLibraryButton" destination="u8J-El-by1" id="CCW-gP-2sR"/>
                         <outlet property="pickButton" destination="5xd-dZ-lRN" id="C4A-ME-SWU"/>
-                        <outlet property="selectedImage" destination="Jit-Io-z79" id="VZG-0n-pFO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9b-uB-zkD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

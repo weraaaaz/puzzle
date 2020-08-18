@@ -13,7 +13,6 @@ class StartViewController: UIViewController, UINavigationControllerDelegate, UII
     @IBOutlet weak var pickButton: StartViewButton!
     @IBOutlet weak var cameraButton: StartViewButton!
     @IBOutlet weak var photoLibraryButton: StartViewButton!
-    @IBOutlet weak var selectedImage: UIImageView!
 
     var imagePicker = UIImagePickerController()
     
@@ -41,8 +40,11 @@ class StartViewController: UIViewController, UINavigationControllerDelegate, UII
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        selectedImage.image = (info[.originalImage] as? UIImage)!
         dismiss(animated: true)
+        let sb = UIStoryboard(name: "SelectGridView", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "SelectGridViewController") as! SelectGridViewController
+        vc.assignDependencies(image: (info[.originalImage] as? UIImage)!)
+        self.navigationController?.pushViewController(vc, animated:true)
     }
 
 }
