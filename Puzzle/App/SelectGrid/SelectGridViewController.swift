@@ -27,12 +27,9 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
         super.viewDidLoad()
         imageBlurView.contentMode = UIView.ContentMode.scaleAspectFill
         imageBlurView.image = self.image
-        self.imageScrollView.minimumZoomScale = 0.8
-        self.imageScrollView.maximumZoomScale = 5.0
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
-        let blurEffectView = CustomIntensityVisualEffectView(effect: blurEffect, intensity: 0.3)
-        blurEffectView.frame = imageBlurView.bounds
-        imageBlurView.addSubview(blurEffectView)
+        imageScrollView.minimumZoomScale = 0.8
+        imageScrollView.maximumZoomScale = 5.0
+        self.createBlurOverlay()
         decreaseCountButton.roundCorners([.topLeft, .bottomLeft], radius: 8)
         increaseCountButton.roundCorners([.topRight, .bottomRight], radius: 8)
         decreaseCountButton.setTitleColor(UIColor.countButtonDisabledText, for: UIControl.State.disabled)
@@ -43,6 +40,20 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
         }
     }
 
+    func createBlurOverlay() {
+        let blur = BlurVisualEffectView()
+        blur.frame = self.view.frame
+        self.view.insertSubview(blur, at: 1)
+        let path = UIBezierPath(rect: self.view.frame)
+        let grid = UIBezierPath(rect: self.gridView.frame)
+        path.append(grid)
+        path.usesEvenOddFillRule = true
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = path.cgPath
+        maskLayer.fillRule = CAShapeLayerFillRule.evenOdd
+        blur.layer.mask = maskLayer
+    }
+    
     func assignDependencies(image: UIImage) {
         self.image = image
     }
