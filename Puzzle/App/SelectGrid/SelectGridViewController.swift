@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectGridViewController: UIViewController, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
+class SelectGridViewController: UIViewController, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate  {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var imageBlurView: UIImageView!
@@ -16,6 +16,7 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
     @IBOutlet weak var increaseCountButton: UIButton!
     @IBOutlet weak var gridCountLabel: UILabel!
     @IBOutlet weak var gridView: UICollectionView!
+    @IBOutlet weak var imageScrollView: UIScrollView!
 
     var image = UIImage()
 
@@ -26,6 +27,8 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
         super.viewDidLoad()
         imageBlurView.contentMode = UIView.ContentMode.scaleAspectFill
         imageBlurView.image = self.image
+        self.imageScrollView.minimumZoomScale = 0.8
+        self.imageScrollView.maximumZoomScale = 5.0
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
         let blurEffectView = CustomIntensityVisualEffectView(effect: blurEffect, intensity: 0.3)
         blurEffectView.frame = imageBlurView.bounds
@@ -59,8 +62,11 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
         let width = (collectionView.bounds.size.width - 2) / CGFloat(self.gridCount)
         return CGSize(width: width, height: width)
     }
-    
 
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.imageBlurView
+    }
+    
     @IBAction func onDecreaseButtonTap(_ sender: Any) {
         if (self.gridCount > 4) {
             let numberOfCellsToRemove = (self.gridCount * self.gridCount) - ((self.gridCount - 1) * (self.gridCount - 1))

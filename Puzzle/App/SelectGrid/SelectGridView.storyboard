@@ -16,10 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9JK-Jd-Xac">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hse-to-drC">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9JK-Jd-Xac">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="ivv-Qc-IQz"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="iOI-UV-evW"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Aqa-Zn-5CK" id="2yz-dL-lya"/>
+                                </connections>
+                            </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Grid Size = 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kza-ir-2bv">
                                 <rect key="frame" x="16" y="60" width="161.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -126,6 +137,7 @@
                         <outlet property="gridCountLabel" destination="Kza-ir-2bv" id="lkX-ll-utK"/>
                         <outlet property="gridView" destination="IA2-wL-rds" id="VYK-Ph-Yud"/>
                         <outlet property="imageBlurView" destination="9JK-Jd-Xac" id="KNB-UD-w9s"/>
+                        <outlet property="imageScrollView" destination="hse-to-drC" id="5CU-xg-ydh"/>
                         <outlet property="increaseCountButton" destination="BR8-NX-Lmg" id="Rre-Rv-x9o"/>
                     </connections>
                 </viewController>
