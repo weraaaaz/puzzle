@@ -17,6 +17,7 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
     @IBOutlet weak var gridCountLabel: UILabel!
     @IBOutlet weak var gridView: UICollectionView!
     @IBOutlet weak var imageScrollView: UIScrollView!
+    @IBOutlet weak var selectImageButton: UIButton!
 
     var image = UIImage()
 
@@ -32,6 +33,8 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
         self.createBlurOverlay()
         decreaseCountButton.roundCorners([.topLeft, .bottomLeft], radius: 8)
         increaseCountButton.roundCorners([.topRight, .bottomRight], radius: 8)
+        selectImageButton.layer.cornerRadius = 8
+        selectImageButton.backgroundColor = UIColor.buttonBackground
         decreaseCountButton.setTitleColor(UIColor.countButtonDisabledText, for: UIControl.State.disabled)
         increaseCountButton.setTitleColor(UIColor.countButtonDisabledText, for: UIControl.State.disabled)
         let cellsCount = gridCount * gridCount
@@ -116,4 +119,10 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
         }
     }
 
+    @IBAction func onSelectImage(_ sender: Any) {
+        let sb = UIStoryboard(name: "PuzzleView", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "PuzzleViewController") as! PuzzleViewController
+        vc.assignDependencies(image: self.image, gridCount: self.gridCount)
+        self.navigationController?.pushViewController(vc, animated:true)
+    }
 }

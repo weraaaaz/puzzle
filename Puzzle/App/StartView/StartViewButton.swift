@@ -36,7 +36,7 @@ class StartViewButton: UIControl {
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         contentView.isUserInteractionEnabled = false
         contentView.layer.cornerRadius = 8
-        contentView.backgroundColor = UIColor.startButtonBackground
+        contentView.backgroundColor = UIColor.buttonBackground
     }
 
     func setup(label: String, image: UIImage?) {

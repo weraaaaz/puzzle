@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D74C31A824D0B85E0015D88E /* SelectGridView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74C31A724D0B85E0015D88E /* SelectGridView.storyboard */; };
-		D74C31AC24D0BBB30015D88E /* SelectGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C31AB24D0BBB30015D88E /* SelectGridViewController.swift */; };
-		D74F215F24ED8636005F052A /* BlurVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74F215E24ED8636005F052A /* BlurVisualEffectView.swift */; };
-		D74F216424ED959A005F052A /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74F216224ED959A005F052A /* GridViewCell.swift */; };
-		D74F216524ED959A005F052A /* GridViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D74F216324ED959A005F052A /* GridViewCell.xib */; };
+		D7C07D7424EDD1FB000C757D /* PuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C07D7324EDD1FB000C757D /* PuzzleViewController.swift */; };
+		D7C07D7624EDD213000C757D /* PuzzleView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7C07D7524EDD213000C757D /* PuzzleView.storyboard */; };
+		D7C07D7C24EDD443000C757D /* GridViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7C07D7724EDD443000C757D /* GridViewCell.xib */; };
+		D7C07D7D24EDD443000C757D /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C07D7824EDD443000C757D /* GridViewCell.swift */; };
+		D7C07D7E24EDD443000C757D /* SelectGridView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7C07D7924EDD443000C757D /* SelectGridView.storyboard */; };
+		D7C07D7F24EDD443000C757D /* BlurVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C07D7A24EDD443000C757D /* BlurVisualEffectView.swift */; };
+		D7C07D8024EDD443000C757D /* SelectGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C07D7B24EDD443000C757D /* SelectGridViewController.swift */; };
 		D7C8988924CB1D2300E7BE7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8988724CB1D2300E7BE7E /* SceneDelegate.swift */; };
 		D7C8988B24CB1D9000E7BE7E /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8988A24CB1D9000E7BE7E /* StartViewController.swift */; };
 		D7C8988F24CB1F0F00E7BE7E /* StartView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7C8988E24CB1F0F00E7BE7E /* StartView.storyboard */; };
@@ -44,11 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D74C31A724D0B85E0015D88E /* SelectGridView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectGridView.storyboard; sourceTree = "<group>"; };
-		D74C31AB24D0BBB30015D88E /* SelectGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGridViewController.swift; sourceTree = "<group>"; };
-		D74F215E24ED8636005F052A /* BlurVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurVisualEffectView.swift; sourceTree = "<group>"; };
-		D74F216224ED959A005F052A /* GridViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewCell.swift; sourceTree = "<group>"; };
-		D74F216324ED959A005F052A /* GridViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridViewCell.xib; sourceTree = "<group>"; };
+		D7C07D7324EDD1FB000C757D /* PuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewController.swift; sourceTree = "<group>"; };
+		D7C07D7524EDD213000C757D /* PuzzleView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PuzzleView.storyboard; sourceTree = "<group>"; };
+		D7C07D7724EDD443000C757D /* GridViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridViewCell.xib; sourceTree = "<group>"; };
+		D7C07D7824EDD443000C757D /* GridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewCell.swift; sourceTree = "<group>"; };
+		D7C07D7924EDD443000C757D /* SelectGridView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelectGridView.storyboard; sourceTree = "<group>"; };
+		D7C07D7A24EDD443000C757D /* BlurVisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurVisualEffectView.swift; sourceTree = "<group>"; };
+		D7C07D7B24EDD443000C757D /* SelectGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectGridViewController.swift; sourceTree = "<group>"; };
 		D7C8988724CB1D2300E7BE7E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D7C8988A24CB1D9000E7BE7E /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		D7C8988E24CB1F0F00E7BE7E /* StartView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartView.storyboard; sourceTree = "<group>"; };
@@ -94,22 +98,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D74C31A624D0B8170015D88E /* SelectGrid */ = {
+		D74C31A624D0B8170015D88E /* SelectGridView */ = {
 			isa = PBXGroup;
 			children = (
-				D74C31A724D0B85E0015D88E /* SelectGridView.storyboard */,
-				D74C31AB24D0BBB30015D88E /* SelectGridViewController.swift */,
-				D74F215E24ED8636005F052A /* BlurVisualEffectView.swift */,
-				D74F216224ED959A005F052A /* GridViewCell.swift */,
-				D74F216324ED959A005F052A /* GridViewCell.xib */,
+				D7C07D7A24EDD443000C757D /* BlurVisualEffectView.swift */,
+				D7C07D7824EDD443000C757D /* GridViewCell.swift */,
+				D7C07D7724EDD443000C757D /* GridViewCell.xib */,
+				D7C07D7924EDD443000C757D /* SelectGridView.storyboard */,
+				D7C07D7B24EDD443000C757D /* SelectGridViewController.swift */,
 			);
-			path = SelectGrid;
+			path = SelectGridView;
+			sourceTree = "<group>";
+		};
+		D7C07D7024EDD182000C757D /* PuzzleView */ = {
+			isa = PBXGroup;
+			children = (
+				D7C07D7324EDD1FB000C757D /* PuzzleViewController.swift */,
+				D7C07D7524EDD213000C757D /* PuzzleView.storyboard */,
+			);
+			path = PuzzleView;
 			sourceTree = "<group>";
 		};
 		D7C8988424CB1D2300E7BE7E /* App */ = {
 			isa = PBXGroup;
 			children = (
-				D74C31A624D0B8170015D88E /* SelectGrid */,
+				D7C07D7024EDD182000C757D /* PuzzleView */,
+				D74C31A624D0B8170015D88E /* SelectGridView */,
 				D7F9F23F24CE113A00748929 /* Extensions */,
 				D7C8988524CB1D2300E7BE7E /* StartView */,
 			);
@@ -293,10 +307,11 @@
 			files = (
 				D7C8989324CB21EB00E7BE7E /* StartViewButton.xib in Resources */,
 				D7C8988F24CB1F0F00E7BE7E /* StartView.storyboard in Resources */,
-				D74F216524ED959A005F052A /* GridViewCell.xib in Resources */,
+				D7C07D7E24EDD443000C757D /* SelectGridView.storyboard in Resources */,
+				D7C07D7C24EDD443000C757D /* GridViewCell.xib in Resources */,
+				D7C07D7624EDD213000C757D /* PuzzleView.storyboard in Resources */,
 				D7E57F0624C9972200788D83 /* LaunchScreen.storyboard in Resources */,
 				D7E57F0324C9972200788D83 /* Assets.xcassets in Resources */,
-				D74C31A824D0B85E0015D88E /* SelectGridView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,13 +338,14 @@
 			files = (
 				D7C8988924CB1D2300E7BE7E /* SceneDelegate.swift in Sources */,
 				D7E57EFA24C9971F00788D83 /* AppDelegate.swift in Sources */,
-				D74C31AC24D0BBB30015D88E /* SelectGridViewController.swift in Sources */,
+				D7C07D8024EDD443000C757D /* SelectGridViewController.swift in Sources */,
 				D7D0BA2024D189E20017FCCD /* UIView.swift in Sources */,
 				D7C8988B24CB1D9000E7BE7E /* StartViewController.swift in Sources */,
+				D7C07D7424EDD1FB000C757D /* PuzzleViewController.swift in Sources */,
 				D7C8989724CB2A6B00E7BE7E /* StartViewButton.swift in Sources */,
-				D74F215F24ED8636005F052A /* BlurVisualEffectView.swift in Sources */,
+				D7C07D7F24EDD443000C757D /* BlurVisualEffectView.swift in Sources */,
+				D7C07D7D24EDD443000C757D /* GridViewCell.swift in Sources */,
 				D7F9F24124CE117500748929 /* UIColor.swift in Sources */,
-				D74F216424ED959A005F052A /* GridViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

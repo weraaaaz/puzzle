@@ -113,6 +113,20 @@
                                     <outlet property="delegate" destination="Aqa-Zn-5CK" id="ynO-pl-dVO"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIs-PO-wTd">
+                                <rect key="frame" x="117" y="805" width="180" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="e44-HB-XPs"/>
+                                    <constraint firstAttribute="width" constant="180" id="zPn-AF-8zM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Select image">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSelectImage:" destination="Aqa-Zn-5CK" eventType="touchUpInside" id="4Rz-HA-VmU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -121,11 +135,13 @@
                             <constraint firstAttribute="trailing" secondItem="IA2-wL-rds" secondAttribute="trailing" constant="32" id="MqE-e3-Ec2"/>
                             <constraint firstItem="IA2-wL-rds" firstAttribute="leading" secondItem="UxV-7h-eCS" secondAttribute="leading" constant="32" id="Q61-Nx-7zE"/>
                             <constraint firstItem="Gl6-Gc-L9p" firstAttribute="leading" secondItem="865-bS-SH1" secondAttribute="leading" constant="16" id="Rxn-jy-7Ru"/>
+                            <constraint firstItem="LIs-PO-wTd" firstAttribute="centerX" secondItem="UxV-7h-eCS" secondAttribute="centerX" id="S9f-YT-crR"/>
                             <constraint firstItem="geZ-7A-h3r" firstAttribute="centerY" secondItem="Gl6-Gc-L9p" secondAttribute="centerY" id="bhX-wg-AD3"/>
                             <constraint firstItem="Kza-ir-2bv" firstAttribute="leading" secondItem="865-bS-SH1" secondAttribute="leading" constant="16" id="h3p-Tj-ezU"/>
                             <constraint firstItem="geZ-7A-h3r" firstAttribute="top" secondItem="Gl6-Gc-L9p" secondAttribute="top" constant="5" id="j6f-At-Wf9"/>
                             <constraint firstItem="geZ-7A-h3r" firstAttribute="leading" secondItem="IWU-Pi-k3H" secondAttribute="trailing" constant="1" id="jV2-vJ-BIA"/>
                             <constraint firstItem="Gl6-Gc-L9p" firstAttribute="top" secondItem="Kza-ir-2bv" secondAttribute="bottom" constant="16" id="pSm-e1-uJA"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="LIs-PO-wTd" secondAttribute="bottom" constant="17" id="pgj-ul-WOZ"/>
                             <constraint firstItem="geZ-7A-h3r" firstAttribute="trailing" secondItem="BR8-NX-Lmg" secondAttribute="leading" constant="3" id="s0H-Dh-gLb"/>
                             <constraint firstItem="IA2-wL-rds" firstAttribute="centerX" secondItem="UxV-7h-eCS" secondAttribute="centerX" id="xnT-hw-vLd"/>
                         </constraints>
@@ -139,6 +155,7 @@
                         <outlet property="imageBlurView" destination="9JK-Jd-Xac" id="KNB-UD-w9s"/>
                         <outlet property="imageScrollView" destination="hse-to-drC" id="5CU-xg-ydh"/>
                         <outlet property="increaseCountButton" destination="BR8-NX-Lmg" id="Rre-Rv-x9o"/>
+                        <outlet property="selectImageButton" destination="LIs-PO-wTd" id="exM-Di-nGy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oIP-aP-fmP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
