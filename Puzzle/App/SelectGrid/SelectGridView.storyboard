@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,14 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UWg-iC-yyp">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9JK-Jd-Xac">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Grid Size = 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kza-ir-2bv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Grid Size = 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kza-ir-2bv">
                                 <rect key="frame" x="16" y="60" width="161.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -76,23 +74,49 @@
                                     <constraint firstAttribute="height" constant="40" id="BcS-Q9-suO"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IA2-wL-rds">
+                                <rect key="frame" x="32" y="210.5" width="350" height="350"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IA2-wL-rds" secondAttribute="height" multiplier="1:1" id="SPX-wN-YfM"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="M2g-oU-3d0">
+                                    <size key="itemSize" width="200" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="gridCell" id="Nne-yZ-xRx" customClass="GridViewCell" customModule="Puzzle" customModuleProvider="target">
+                                        <rect key="frame" x="75" y="0.0" width="200" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EoO-dB-Iye">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Aqa-Zn-5CK" id="a4V-9E-plr"/>
+                                    <outlet property="delegate" destination="Aqa-Zn-5CK" id="ynO-pl-dVO"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="IA2-wL-rds" firstAttribute="top" secondItem="Gl6-Gc-L9p" secondAttribute="bottom" constant="64" id="4eV-ei-gqN"/>
                             <constraint firstItem="Kza-ir-2bv" firstAttribute="top" secondItem="865-bS-SH1" secondAttribute="top" constant="16" id="547-Po-u0P"/>
-                            <constraint firstAttribute="bottom" secondItem="UWg-iC-yyp" secondAttribute="bottom" id="KuQ-fN-ch8"/>
+                            <constraint firstAttribute="trailing" secondItem="IA2-wL-rds" secondAttribute="trailing" constant="32" id="MqE-e3-Ec2"/>
+                            <constraint firstItem="IA2-wL-rds" firstAttribute="leading" secondItem="UxV-7h-eCS" secondAttribute="leading" constant="32" id="Q61-Nx-7zE"/>
                             <constraint firstItem="Gl6-Gc-L9p" firstAttribute="leading" secondItem="865-bS-SH1" secondAttribute="leading" constant="16" id="Rxn-jy-7Ru"/>
-                            <constraint firstItem="UWg-iC-yyp" firstAttribute="top" secondItem="UxV-7h-eCS" secondAttribute="top" id="TjP-x0-XNl"/>
-                            <constraint firstAttribute="trailing" secondItem="UWg-iC-yyp" secondAttribute="trailing" id="Usg-N6-Lbn"/>
-                            <constraint firstItem="UWg-iC-yyp" firstAttribute="centerY" secondItem="UxV-7h-eCS" secondAttribute="centerY" id="XRt-55-2ex"/>
-                            <constraint firstItem="UWg-iC-yyp" firstAttribute="leading" secondItem="UxV-7h-eCS" secondAttribute="leading" id="YBN-79-mvu"/>
                             <constraint firstItem="geZ-7A-h3r" firstAttribute="centerY" secondItem="Gl6-Gc-L9p" secondAttribute="centerY" id="bhX-wg-AD3"/>
                             <constraint firstItem="Kza-ir-2bv" firstAttribute="leading" secondItem="865-bS-SH1" secondAttribute="leading" constant="16" id="h3p-Tj-ezU"/>
                             <constraint firstItem="geZ-7A-h3r" firstAttribute="top" secondItem="Gl6-Gc-L9p" secondAttribute="top" constant="5" id="j6f-At-Wf9"/>
                             <constraint firstItem="geZ-7A-h3r" firstAttribute="leading" secondItem="IWU-Pi-k3H" secondAttribute="trailing" constant="1" id="jV2-vJ-BIA"/>
                             <constraint firstItem="Gl6-Gc-L9p" firstAttribute="top" secondItem="Kza-ir-2bv" secondAttribute="bottom" constant="16" id="pSm-e1-uJA"/>
-                            <constraint firstItem="UWg-iC-yyp" firstAttribute="centerX" secondItem="UxV-7h-eCS" secondAttribute="centerX" id="rEZ-gu-FPc"/>
                             <constraint firstItem="geZ-7A-h3r" firstAttribute="trailing" secondItem="BR8-NX-Lmg" secondAttribute="leading" constant="3" id="s0H-Dh-gLb"/>
+                            <constraint firstItem="IA2-wL-rds" firstAttribute="centerX" secondItem="UxV-7h-eCS" secondAttribute="centerX" id="xnT-hw-vLd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="865-bS-SH1"/>
                     </view>
@@ -100,8 +124,8 @@
                         <outlet property="contentView" destination="UxV-7h-eCS" id="1Dr-40-pMe"/>
                         <outlet property="decreaseCountButton" destination="IWU-Pi-k3H" id="1P4-r9-vhA"/>
                         <outlet property="gridCountLabel" destination="Kza-ir-2bv" id="lkX-ll-utK"/>
+                        <outlet property="gridView" destination="IA2-wL-rds" id="VYK-Ph-Yud"/>
                         <outlet property="imageBlurView" destination="9JK-Jd-Xac" id="KNB-UD-w9s"/>
-                        <outlet property="imageView" destination="UWg-iC-yyp" id="nR2-6r-g0U"/>
                         <outlet property="increaseCountButton" destination="BR8-NX-Lmg" id="Rre-Rv-x9o"/>
                     </connections>
                 </viewController>

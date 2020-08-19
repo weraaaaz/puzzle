@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		D74C31A824D0B85E0015D88E /* SelectGridView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74C31A724D0B85E0015D88E /* SelectGridView.storyboard */; };
 		D74C31AC24D0BBB30015D88E /* SelectGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C31AB24D0BBB30015D88E /* SelectGridViewController.swift */; };
+		D74F215F24ED8636005F052A /* CustomIntensityVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74F215E24ED8636005F052A /* CustomIntensityVisualEffectView.swift */; };
+		D74F216424ED959A005F052A /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74F216224ED959A005F052A /* GridViewCell.swift */; };
+		D74F216524ED959A005F052A /* GridViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D74F216324ED959A005F052A /* GridViewCell.xib */; };
 		D7C8988924CB1D2300E7BE7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8988724CB1D2300E7BE7E /* SceneDelegate.swift */; };
 		D7C8988B24CB1D9000E7BE7E /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8988A24CB1D9000E7BE7E /* StartViewController.swift */; };
 		D7C8988F24CB1F0F00E7BE7E /* StartView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7C8988E24CB1F0F00E7BE7E /* StartView.storyboard */; };
@@ -43,6 +46,9 @@
 /* Begin PBXFileReference section */
 		D74C31A724D0B85E0015D88E /* SelectGridView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectGridView.storyboard; sourceTree = "<group>"; };
 		D74C31AB24D0BBB30015D88E /* SelectGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGridViewController.swift; sourceTree = "<group>"; };
+		D74F215E24ED8636005F052A /* CustomIntensityVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectView.swift; sourceTree = "<group>"; };
+		D74F216224ED959A005F052A /* GridViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewCell.swift; sourceTree = "<group>"; };
+		D74F216324ED959A005F052A /* GridViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridViewCell.xib; sourceTree = "<group>"; };
 		D7C8988724CB1D2300E7BE7E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D7C8988A24CB1D9000E7BE7E /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		D7C8988E24CB1F0F00E7BE7E /* StartView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartView.storyboard; sourceTree = "<group>"; };
@@ -93,6 +99,9 @@
 			children = (
 				D74C31A724D0B85E0015D88E /* SelectGridView.storyboard */,
 				D74C31AB24D0BBB30015D88E /* SelectGridViewController.swift */,
+				D74F215E24ED8636005F052A /* CustomIntensityVisualEffectView.swift */,
+				D74F216224ED959A005F052A /* GridViewCell.swift */,
+				D74F216324ED959A005F052A /* GridViewCell.xib */,
 			);
 			path = SelectGrid;
 			sourceTree = "<group>";
@@ -284,6 +293,7 @@
 			files = (
 				D7C8989324CB21EB00E7BE7E /* StartViewButton.xib in Resources */,
 				D7C8988F24CB1F0F00E7BE7E /* StartView.storyboard in Resources */,
+				D74F216524ED959A005F052A /* GridViewCell.xib in Resources */,
 				D7E57F0624C9972200788D83 /* LaunchScreen.storyboard in Resources */,
 				D7E57F0324C9972200788D83 /* Assets.xcassets in Resources */,
 				D74C31A824D0B85E0015D88E /* SelectGridView.storyboard in Resources */,
@@ -317,7 +327,9 @@
 				D7D0BA2024D189E20017FCCD /* UIView.swift in Sources */,
 				D7C8988B24CB1D9000E7BE7E /* StartViewController.swift in Sources */,
 				D7C8989724CB2A6B00E7BE7E /* StartViewButton.swift in Sources */,
+				D74F215F24ED8636005F052A /* CustomIntensityVisualEffectView.swift in Sources */,
 				D7F9F24124CE117500748929 /* UIColor.swift in Sources */,
+				D74F216424ED959A005F052A /* GridViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
