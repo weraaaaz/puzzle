@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="Puzzle" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraButton" destination="aTK-jD-86d" id="NZm-AC-zTx"/>
+                <outlet property="photoLibraryButton" destination="kVj-ro-YZT" id="u9B-lw-tl9"/>
+                <outlet property="pickButton" destination="bHW-lN-uUk" id="Le6-9L-HEc"/>
+                <outlet property="view" destination="0KB-Gu-P74" id="Pkc-7E-bWO"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="0KB-Gu-P74">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puzzle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTc-C7-9mP">
+                    <rect key="frame" x="81" y="76" width="252" height="77"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="252" id="64Z-at-BhW"/>
+                        <constraint firstAttribute="height" constant="77" id="6Cz-3P-yvX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="80"/>
+                    <color key="textColor" red="0.61176470589999998" green="0.043137254899999998" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Challenge yourself with a photo puzzle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Q2-0P-JWs">
+                    <rect key="frame" x="80.5" y="161" width="253.5" height="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHW-lN-uUk" customClass="StartViewButton" customModule="Puzzle" customModuleProvider="target">
+                    <rect key="frame" x="139" y="289" width="136" height="104"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="136" id="Ofx-li-Ygy"/>
+                        <constraint firstAttribute="height" constant="104" id="eHm-wg-roS"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="onPickButtonTap:" destination="-1" eventType="touchUpInside" id="IMH-Yt-AfO"/>
+                    </connections>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Or load your own-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfd-Kb-3u7">
+                    <rect key="frame" x="134.5" y="409" width="145.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="QJN-hm-0f5">
+                    <rect key="frame" x="55" y="457" width="304" height="104"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTK-jD-86d" customClass="StartViewButton" customModule="Puzzle" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="136" height="104"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="104" id="IND-LU-BRN"/>
+                                <constraint firstAttribute="width" constant="136" id="ORI-vD-l9f"/>
+                            </constraints>
+                            <connections>
+                                <action selector="onCameraButtonTap:" destination="-1" eventType="touchUpInside" id="94d-ow-9cD"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVj-ro-YZT" customClass="StartViewButton" customModule="Puzzle" customModuleProvider="target">
+                            <rect key="frame" x="168" y="0.0" width="136" height="104"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="104" id="6Mr-1s-pFO"/>
+                                <constraint firstAttribute="width" constant="136" id="FQx-iz-Rqe"/>
+                            </constraints>
+                            <connections>
+                                <action selector="onPhotoLibraryButtonTap:" destination="-1" eventType="touchUpInside" id="7m1-6z-Rnd"/>
+                            </connections>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="QJN-hm-0f5" firstAttribute="top" secondItem="bHW-lN-uUk" secondAttribute="bottom" constant="64" id="BV0-ON-Dgw"/>
+                <constraint firstItem="dfd-Kb-3u7" firstAttribute="centerX" secondItem="0KB-Gu-P74" secondAttribute="centerX" id="Cq5-21-URN"/>
+                <constraint firstItem="mTc-C7-9mP" firstAttribute="top" secondItem="mvU-n9-Sc4" secondAttribute="top" constant="32" id="KzR-t7-56C"/>
+                <constraint firstItem="4Q2-0P-JWs" firstAttribute="top" secondItem="mTc-C7-9mP" secondAttribute="bottom" constant="8" id="YcQ-Kz-GOE"/>
+                <constraint firstItem="dfd-Kb-3u7" firstAttribute="top" secondItem="bHW-lN-uUk" secondAttribute="bottom" constant="16" id="bIm-c6-hqr"/>
+                <constraint firstItem="4Q2-0P-JWs" firstAttribute="centerX" secondItem="mvU-n9-Sc4" secondAttribute="centerX" id="cHx-y1-cbV"/>
+                <constraint firstItem="bHW-lN-uUk" firstAttribute="top" secondItem="4Q2-0P-JWs" secondAttribute="top" constant="128" id="hR0-ee-lyc"/>
+                <constraint firstItem="mTc-C7-9mP" firstAttribute="centerX" secondItem="mvU-n9-Sc4" secondAttribute="centerX" id="q34-Fn-j33"/>
+                <constraint firstItem="bHW-lN-uUk" firstAttribute="centerX" secondItem="0KB-Gu-P74" secondAttribute="centerX" id="qXz-55-p4x"/>
+                <constraint firstItem="QJN-hm-0f5" firstAttribute="centerX" secondItem="0KB-Gu-P74" secondAttribute="centerX" id="uBL-aS-6JV"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="mvU-n9-Sc4"/>
+            <point key="canvasLocation" x="138" y="129"/>
+        </view>
+    </objects>
+</document>

@@ -41,10 +41,7 @@ class StartViewController: UIViewController, UINavigationControllerDelegate, UII
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true)
-        let sb = UIStoryboard(name: "SelectGridView", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "SelectGridViewController") as! SelectGridViewController
-        vc.assignDependencies(image: (info[.originalImage] as? UIImage)!)
-        self.navigationController?.pushViewController(vc, animated:true)
+        SelectGridViewBuilder.pushIn(navigationController: self.navigationController!, image: (info[.originalImage] as? UIImage)!)
     }
 
 }

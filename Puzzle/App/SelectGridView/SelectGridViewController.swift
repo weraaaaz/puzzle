@@ -22,21 +22,27 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
     var image = UIImage()
 
     var gridCount = 6
-    var puzzleCells:Array<Int> = []
+    var puzzleCells: [Int] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageBlurView.contentMode = UIView.ContentMode.scaleAspectFill
-        imageBlurView.image = self.image
+        
         imageScrollView.minimumZoomScale = 0.8
         imageScrollView.maximumZoomScale = 5.0
+        
+        imageBlurView.image = self.image
         self.createBlurOverlay()
+        
         decreaseCountButton.roundCorners([.topLeft, .bottomLeft], radius: 8)
         increaseCountButton.roundCorners([.topRight, .bottomRight], radius: 8)
-        selectImageButton.layer.cornerRadius = 8
-        selectImageButton.backgroundColor = UIColor.buttonBackground
         decreaseCountButton.setTitleColor(UIColor.countButtonDisabledText, for: UIControl.State.disabled)
         increaseCountButton.setTitleColor(UIColor.countButtonDisabledText, for: UIControl.State.disabled)
+        
+        selectImageButton.layer.cornerRadius = 8
+        selectImageButton.backgroundColor = UIColor.buttonBackground
+
+        gridView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "gridCell")
+        
         let cellsCount = gridCount * gridCount
         for i in 1...cellsCount {
             puzzleCells.append(i)
@@ -46,14 +52,19 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
     func createBlurOverlay() {
         let blur = BlurVisualEffectView()
         blur.frame = self.view.frame
+        
         self.view.insertSubview(blur, at: 1)
+        
         let path = UIBezierPath(rect: self.view.frame)
         let grid = UIBezierPath(rect: self.gridView.frame)
+        
         path.append(grid)
         path.usesEvenOddFillRule = true
+        
         let maskLayer = CAShapeLayer()
         maskLayer.path = path.cgPath
         maskLayer.fillRule = CAShapeLayerFillRule.evenOdd
+        
         blur.layer.mask = maskLayer
     }
     
@@ -66,14 +77,14 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = gridView.dequeueReusableCell(withReuseIdentifier: "gridCell", for: indexPath as IndexPath) as! GridViewCell
+        let cell = gridView.dequeueReusableCell(withReuseIdentifier: "gridCell", for: indexPath as IndexPath)
         cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 1
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.bounds.size.width - 2) / CGFloat(self.gridCount)
+        let width = (collectionView.bounds.size.width) / CGFloat(self.gridCount)
         return CGSize(width: width, height: width)
     }
 
@@ -86,6 +97,7 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
             let numberOfCellsToRemove = (self.gridCount * self.gridCount) - ((self.gridCount - 1) * (self.gridCount - 1))
             self.gridCount = self.gridCount - 1
             self.gridCountLabel.text = "Current Grid Size = \(self.gridCount)"
+            
             DispatchQueue.main.async {
                 for _ in 1...numberOfCellsToRemove {
                     self.puzzleCells.removeLast()
@@ -93,6 +105,7 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
                 self.gridView.reloadData()
             }
         }
+        
         if (self.gridCount == 4) {
             self.decreaseCountButton.isEnabled = false
         } else if (self.gridCount == 7) {
@@ -105,6 +118,7 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
             let numberOfCellsToAdd = ((self.gridCount + 1) * (self.gridCount + 1)) - self.gridCount * self.gridCount
             self.gridCount = self.gridCount + 1
             self.gridCountLabel.text = "Current Grid Size = \(self.gridCount)"
+            
             DispatchQueue.main.async {
                 for _ in 1...numberOfCellsToAdd {
                     self.puzzleCells.append(self.puzzleCells.count + 1)
@@ -112,6 +126,7 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
                 self.gridView.reloadData()
             }
         }
+        
         if (self.gridCount == 8) {
             self.increaseCountButton.isEnabled = false
         } else if (self.gridCount == 5) {
@@ -120,9 +135,34 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
     }
 
     @IBAction func onSelectImage(_ sender: Any) {
-        let sb = UIStoryboard(name: "PuzzleView", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "PuzzleViewController") as! PuzzleViewController
-        vc.assignDependencies(image: self.image, gridCount: self.gridCount)
-        self.navigationController?.pushViewController(vc, animated:true)
+        let cropRect = CGRect(x: self.gridView.frame.origin.x - self.realImageRect(imageView: self.imageBlurView).origin.x,
+                              y: self.gridView.frame.origin.y - self.realImageRect(imageView: self.imageBlurView).origin.y,
+                              width: self.gridView.frame.width,
+                              height: self.gridView.frame.height)
+//        self.imageScrollView.zoomScale = 1
+        PuzzleViewBuilder.pushIn(navigationController: self.navigationController!, image: self.image.cropped(rect: cropRect, imageViewWidth: self.imageBlurView.frame.width, imageViewHeight: self.imageBlurView.frame.height)!, gridCount: self.gridCount)
+    }
+    
+    func realImageRect(imageView: UIImageView) -> CGRect {
+        let imageViewSize = imageView.frame.size
+        let imgSize = imageView.image?.size
+        
+        guard let imageSize = imgSize else {
+            return CGRect.zero
+        }
+        
+        let scaleWidth = imageViewSize.width / imageSize.width
+        let scaleHeight = imageViewSize.height / imageSize.height
+        let aspect = fmin(scaleWidth, scaleHeight)
+        
+        var imageRect = CGRect(x: 0, y: 0, width: imageSize.width * aspect, height: imageSize.height * aspect)
+
+        imageRect.origin.x = (imageViewSize.width - imageRect.size.width) / 2
+        imageRect.origin.y = (imageViewSize.height - imageRect.size.height) / 2
+        
+        imageRect.origin.x += imageView.frame.origin.x
+        imageRect.origin.y += imageView.frame.origin.y
+        
+        return imageRect
     }
 }

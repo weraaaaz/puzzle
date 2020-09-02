@@ -11,16 +11,11 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var navigationController: UINavigationController?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         let windowScene = (scene as? UIWindowScene)
         let window = UIWindow(windowScene: windowScene!)
-        let sb = UIStoryboard(name: "StartView", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "StartViewController")
-        navigationController = UINavigationController(rootViewController: vc)
-        navigationController?.navigationBar.isHidden = true
-        window.rootViewController = navigationController
+        StartViewBuilder.showIn(window: window)
         window.makeKeyAndVisible()
         self.window = window
     }
