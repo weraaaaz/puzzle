@@ -135,34 +135,8 @@ class SelectGridViewController: UIViewController, UINavigationControllerDelegate
     }
 
     @IBAction func onSelectImage(_ sender: Any) {
-        let cropRect = CGRect(x: self.gridView.frame.origin.x - self.realImageRect(imageView: self.imageBlurView).origin.x,
-                              y: self.gridView.frame.origin.y - self.realImageRect(imageView: self.imageBlurView).origin.y,
-                              width: self.gridView.frame.width,
-                              height: self.gridView.frame.height)
-//        self.imageScrollView.zoomScale = 1
-        PuzzleViewBuilder.pushIn(navigationController: self.navigationController!, image: self.image.cropped(rect: cropRect, imageViewWidth: self.imageBlurView.frame.width, imageViewHeight: self.imageBlurView.frame.height)!, gridCount: self.gridCount)
+        self.imageScrollView.zoomScale = 1
+        PuzzleViewBuilder.pushIn(navigationController: self.navigationController!, image: self.image.cropped(), gridCount: self.gridCount)
     }
     
-    func realImageRect(imageView: UIImageView) -> CGRect {
-        let imageViewSize = imageView.frame.size
-        let imgSize = imageView.image?.size
-        
-        guard let imageSize = imgSize else {
-            return CGRect.zero
-        }
-        
-        let scaleWidth = imageViewSize.width / imageSize.width
-        let scaleHeight = imageViewSize.height / imageSize.height
-        let aspect = fmin(scaleWidth, scaleHeight)
-        
-        var imageRect = CGRect(x: 0, y: 0, width: imageSize.width * aspect, height: imageSize.height * aspect)
-
-        imageRect.origin.x = (imageViewSize.width - imageRect.size.width) / 2
-        imageRect.origin.y = (imageViewSize.height - imageRect.size.height) / 2
-        
-        imageRect.origin.x += imageView.frame.origin.x
-        imageRect.origin.y += imageView.frame.origin.y
-        
-        return imageRect
-    }
 }

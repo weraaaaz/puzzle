@@ -1,5 +1,5 @@
 //
-//  StartViewButtonController.swift
+//  StartButtonswift
 //  Puzzle
 //
 //  Created by dev on 24/07/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartViewButton: UIControl {
+class StartButton: UIControl {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var imageView: UIImageView!
@@ -30,7 +30,7 @@ class StartViewButton: UIControl {
     }
     
     private func loadFromNib() {
-        Bundle.main.loadNibNamed("StartViewButton", owner: self, options: nil)
+        Bundle.main.loadNibNamed("StartButton", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]

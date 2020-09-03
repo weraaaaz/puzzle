@@ -36,7 +36,7 @@
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHW-lN-uUk" customClass="StartViewButton" customModule="Puzzle" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHW-lN-uUk" customClass="StartButton" customModule="Puzzle" customModuleProvider="target">
                     <rect key="frame" x="139" y="289" width="136" height="104"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="136" id="Ofx-li-Ygy"/>
@@ -58,7 +58,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="QJN-hm-0f5">
                     <rect key="frame" x="55" y="457" width="304" height="104"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTK-jD-86d" customClass="StartViewButton" customModule="Puzzle" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTK-jD-86d" customClass="StartButton" customModule="Puzzle" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="136" height="104"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="104" id="IND-LU-BRN"/>
@@ -68,7 +68,7 @@
                                 <action selector="onCameraButtonTap:" destination="-1" eventType="touchUpInside" id="94d-ow-9cD"/>
                             </connections>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVj-ro-YZT" customClass="StartViewButton" customModule="Puzzle" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVj-ro-YZT" customClass="StartButton" customModule="Puzzle" customModuleProvider="target">
                             <rect key="frame" x="168" y="0.0" width="136" height="104"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="104" id="6Mr-1s-pFO"/>
